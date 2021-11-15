@@ -30,6 +30,22 @@ $this->models["TaskCRM"]["fields"] = array(
         "in_table" => true,
         "type" => array("type" => "date", "size" => 50, "class" => "col-md-4")
     ),
+    "end_date" => array(
+        "title" => "end_date",
+        "label" => " تاریخ پایان",
+        "sortable" => true,
+        "in_form" => true,
+        "in_table" => true,
+        "type" => array("type" => "date", "size" => 50, "class" => "col-md-4")
+    ),
+    "statusprojectcrm_id" => array(
+        "title" => "statusprojectcrm_id",
+        "label" => "وضعیت",
+        "sortable" => true,
+        "in_form" => true,
+        "in_table" => true,
+        "type" => array("type" => "select", "select" => ["model"=> $wpdb->prefix . "hesab_model","where" => "type_id=203", "key" => "ID", "label" => "title"], "size" => 50, "class" => "col-md-4")
+    ),
     "organizationId" => array(
         "title" => "organizationId",
         "label" => "سازمان/شرکت",
@@ -61,5 +77,13 @@ $this->models["TaskCRM"]["fields"] = array(
         "in_form" => true,
         "in_table" => true,
         "type" => array("type" => "select","auto-select"=>true, "select" => ["model"=> $wpdb->prefix . "users","where" => " ", "key" => "ID", "label" => "display_name"], "size" => 50, "class" => "col-md-4")
+    ),
+    "description" => array(
+        "title" => "description",
+        "label" => "توضیحات",
+        "sortable" => true,
+        "in_form" => true,
+        "in_table"=>true,
+        "type" => array("type" => "textarea","height"=>70, "size" => 1000,"class"=>"col-md-12")
     )
 );
