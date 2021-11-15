@@ -45,6 +45,11 @@ if (class_exists('MBM_Ipak_Core')) {
             $entity =  $this->get_entity("UserInProjectCRM");
             $entity->render();
         }
+        public function TaskCRM()
+        {
+            $entity =  $this->get_entity("TaskCRM");
+            $entity->render();
+        }
       
 
         public function url($urls)
@@ -62,6 +67,8 @@ if (class_exists('MBM_Ipak_Core')) {
             add_submenu_page('ipak-CRM-dashboard', 'پروژه', 'پروژه', 'manage_options', 'ipak-CRM-projectcrm', array($this, "projectcrm"));
             add_submenu_page('ipak-CRM-dashboard', 'تعریف وضعیت پروژه', 'تعریف وضعیت پروژه', 'manage_options', 'ipak-CRM-statusprojectcrm', array($this, "statusprojectcrm"));
             add_submenu_page('ipak-CRM-dashboard', 'اعضای پروژه', 'اعضای پروژه', 'manage_options', 'ipak-CRM-UserInProjectCRM', array($this, "UserInProjectCRM"));
+            add_submenu_page('ipak-CRM-dashboard', 'کار', 'کار', 'manage_options', 'ipak-CRM-TaskCRM', array($this, "TaskCRM"));
+            
             
 
             $this->add_entity(mbm_ipak\tools::get_model_from_url(), "list", MBM_IPAK_CRM_Include);
